@@ -15,7 +15,6 @@ app.debug = True
 
 model = pickle.load(open("mainmodel.pkl", 'rb'))
 sift = cv2.xfeatures2d.SIFT_create()
-min_max_scaler = preprocessing.MinMaxScaler()
 size=128
 
 @app.route("/")
@@ -52,32 +51,30 @@ def upload_file():
 
 @app.route('/predict/<file>', methods=['GET', 'POST'])
 def predict(file):
-  glcm=[]
-  images_sift=[]
-  images_sift_glcm=[]
-  image = cv2.imread("./static/inputimages/"+file,0)
-  image = cv2.resize(image, (size, size), interpolation = cv2.INTER_AREA)
-  img_arr = np.array(image)
-  gCoMat = greycomatrix(img_arr, [1], [0],256,symmetric=True, normed=True) # Co-occurance matrix
+  image_test = cv2.imread("./static/inputimages/"+file,0)
+  image_test = cv2.resize(image_test, (size, size), interpolation = cv2.INTER_AREA)
+  glcm_test=[]
+  images_sift_test=[]
+  img_arr_test = np.array(image_test)
+  gCoMat = greycomatrix(img_arr_test, [1], [0],256,symmetric=True, normed=True) # Co-occurance matrix
   contrast = greycoprops(gCoMat, prop='contrast')[0][0]
   dissimilarity = greycoprops(gCoMat, prop='dissimilarity')[0][0]
   homogeneity = greycoprops(gCoMat, prop='homogeneity')[0][0]
   energy = greycoprops(gCoMat, prop='energy')[0][0]
   correlation = greycoprops(gCoMat, prop='correlation')[0][0]
-  keypoints, descriptors = sift.detectAndCompute(image,None)
-  glcm.append([contrast,dissimilarity,homogeneity,energy,correlation])
-  images_sift=descriptors[:18]
-  images_sift=np.array(images_sift)
-  images_sift=images_sift.reshape([1,2304])
-  glcm=np.array(glcm)
-  images_sift_glcm=np.concatenate((images_sift,glcm),axis=1)
-  x_scaled = min_max_scaler.fit_transform(images_sift_glcm)
+  keypoints, descriptors = sift.detectAndCompute(image_test,None)
+  descriptors=np.array(descriptors)
+  descriptors=descriptors.flatten()
+  glcm_test.append([contrast,dissimilarity,homogeneity,energy,correlation])
+  glcm_test=np.array(glcm_test)
+  images_sift_test.append(descriptors[:2304])
+  images_sift_test=np.array(images_sift_test)
+  images_sift_glcm_test=np.concatenate((images_sift_test,glcm_test),axis=1)
   result = ""
-  value=model.predict(x_scaled)
-  if(value==1):
-    result = "Cataract Detected"
+  if(log_pickle_model.predict(images_sift_glcm_test)==1):
+      result = "Cataract Detected"
   else:
-    result = "Cataract Not Detected"
+      result = "Cataract Not Detected"
   return redirect(url_for('results', result = result))
 
 @app.route('/result/<result>', methods=['GET', 'POST'])
