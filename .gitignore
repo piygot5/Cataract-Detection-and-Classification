@@ -1,7 +1,5 @@
 project documents/
-phase 2 Types/Deep learning/preprocessed_images_224.zip
-phase 2 Types/Deep learning/preprocessed_images_40.zip
-phase 2 Types/Deep learning/preprocessed images_original_size.zip
+*.zip
 phase 2 Types/Deep learning/Dataset
 phase 2 Types/Deep learning/preprocessed images_224
 phase 2 Types/Deep learning/preprocessed images_40
