@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <link rel='icon' href='#' type='image/x-icon'>
+    <title>Netra</title>
+    <!-- Required meta tags always come first -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href={{ url_for('static', filename='style.css' ) }}>
+
+</head>
+
+<body>
+    <div class="container-fluid">
+        <nav class="navbar navbar-expand-md fixed-top main-navbar">
+            <button class="navbar-toggler" type="button" style="background-color: #2650a4;" data-toggle="collapse"
+                data-target="#Navbar">
+                <span class="fa fa-bars" style="color: white">
+                </span>
+            </button>
+            <div class="center">
+                <a class="navbar-brand mt-3 mr-5 ml-5 nav-style" href="{{ url_for('hello') }}">
+                    Netra
+                </a>
+            </div>
+            <div class="collapse navbar-collapse" id="Navbar">
+                <ul class="nav navbar-nav navbar-right mt-3 ml-auto mr-5">
+                    <li class="nav-item active px-2"><a class="nav-link nav-style nav-size"
+                            href="{{ url_for('main') }}"> Home
+                        </a>
+                    </li>
+                    <li class="nav-item px-2"><a class="nav-link nav-style nav-size" href="{{ url_for('about') }}">
+                            About</a></li>
+                </ul>
+            </div>
+        </nav>
+    </div>
+
+    <div class="main-section container-fluid">
+        <div class="row">
+            <div class="form-side col-6">
+                <form class="form-elements" action="{{ url_for('upload_file') }}" method="post"
+                    enctype="multipart/form-data">
+                    <div class="label-text ml-5">Upload Image</div>
+                    <input type="file" id="img" name='file'>
+                    <br>
+                    <input class="ml-5" id="submit" type="submit">
+                </form>
+            </div>
+            <div class="result-side col-6">
+                <div class="result-element">
+                    <h3 class="label-text">YOUR IMAGE</h3>
+                    <img class="input-image" src="./../static/inputimages/{{ user_image }}" alt="No file upload">
+                    <br>
+                    <form action="{{ url_for('prediction',file = user_image) }}" method="post">
+                        <input class="ml-5" id="submit" type="submit" value="Show Result">
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container-fluid">
+        <div class="row footer">
+            <div class="col-12">
+                <h4 class="mt-3 mb-3" style="padding-bottom: 5px;">Developed with care 💻 under the guidance of
+                    Mr.Swapnil Shinde</h5>
+            </div>
+        </div>
+    </div>

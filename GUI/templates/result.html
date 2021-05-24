@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <link rel='icon' href='#' type='image/x-icon'>
+    <title>Netra</title>
+    <!-- Required meta tags always come first -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href={{ url_for('static', filename='style.css' ) }}>
+
+</head>
+
+<body>
+    <div class="container-fluid">
+        <nav class="navbar navbar-expand-md fixed-top main-navbar">
+            <button class="navbar-toggler" type="button" style="background-color: #2650a4;" data-toggle="collapse"
+                data-target="#Navbar">
+                <span class="fa fa-bars" style="color: white">
+                </span>
+            </button>
+            <div class="center">
+                <a class="navbar-brand mt-3 mr-5 ml-5 nav-style" href="{{ url_for('hello') }}">
+                    Netra
+                </a>
+            </div>
+            <div class="collapse navbar-collapse" id="Navbar">
+                <ul class="nav navbar-nav navbar-right mt-3 ml-auto mr-5">
+                    <li class="nav-item active px-2"><a class="nav-link nav-style nav-size"
+                            href="{{ url_for('main') }}"> Home
+                        </a>
+                    </li>
+                    <li class="nav-item px-2"><a class="nav-link nav-style nav-size" href="{{ url_for('about') }}">
+                            About</a></li>
+                </ul>
+            </div>
+        </nav>
+    </div>
+
+    <div class="container-fluid">
+        <div class="row result-page">
+            <div col-12>
+                <h1 class="header">The model shows the image to be</h1>
+                <br>
+                <h2 class="header2">{{ result1 }}</h2>
+                <br>
+                <h2 class="header2">{{ result2 }}</h2>
+            </div>
+        </div>
+    </div>
