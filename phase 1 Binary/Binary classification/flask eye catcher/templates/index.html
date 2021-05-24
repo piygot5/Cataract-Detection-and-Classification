@@ -1,0 +1,20 @@
+<html>
+  <head>
+    <title>cataract</title>
+  </head>
+  <<body>
+    <<img id ="bg" width = 800px height=640px src="{{ url_for('video_feed') }}"  alt="">
+    <script type="text/javascript">
+    	async function getMedia(constraints) {
+		  let stream = null;
+
+		  try {
+		    stream = await navigator.mediaDevices.getUserMedia(constraints);
+		    /* use the stream */
+		  } catch(err) {
+		    /* handle the error */
+		  }
+		}
+    </script>>
+  </body>
+  </html>
