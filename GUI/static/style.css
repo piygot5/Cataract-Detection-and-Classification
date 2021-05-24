@@ -1,0 +1,146 @@
+@import url('https://fonts.googleapis.com/css2?family=Monda:wght@700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Raleway&display=swap');
+
+body{
+    background-color:#f4f4f4 !important;
+}
+.nav-style{
+    font-family: 'Monda', sans-serif;
+    }
+
+.nav-size{
+  font-size: larger;
+}
+
+.banner-section{
+    margin-top: 150px;
+}
+
+.text-area{
+  margin-top: 100px;
+}
+
+.btn {
+    margin-left: 10px;
+    margin-right: 10px;
+  }
+
+  .btn-primary {
+    font-size: 13px;
+    color: rgba(58, 133, 191, 0.75);
+    letter-spacing: 1px;
+    line-height: 15px;
+    border: 2px solid rgba(58, 133, 191, 0.75);
+    border-radius: 40px;
+    background: transparent;
+    transition: all 0.3s ease 0s;
+  }
+  
+  .btn-primary:hover {
+    color: #FFF;
+    background: rgba(58, 133, 191, 0.75);
+    border: 2px solid rgba(58, 133, 191, 0.75);
+  }
+  
+.about-image{
+  background-image: url("eyeabout.jpg");
+  height: 93vh; 
+  min-height: 400px; 
+  background-position:center; 
+  background-size: cover;
+}
+
+.about-nav-element{
+  margin-left: 300px;
+}
+
+.footer{
+  background-color:rgba(37, 124, 204, 1);
+  font-family: 'Raleway', sans-serif;
+  text-align: center;
+}
+
+/** Main page **/
+
+.main-section {
+  margin-top: 150px;
+  height: 552px;
+}
+
+.label-text {
+  font-size: 25px;
+  font-family: 'Monda', sans-serif;
+  margin-bottom: 10px;
+  color: rgba(30, 84, 126, 0.75);
+}
+.form-elements {
+  margin-top: 15%;
+  margin-left: 45%;
+}
+
+.result-element {
+  margin-top: 5%;
+  margin-left: 43%;
+}
+
+.input-image {
+  margin-left: -15%;
+  width: 300px;
+  height: 300px;
+}
+
+::-webkit-file-upload-button {
+  background: rgba(58, 133, 191, 0.75);
+  color: #FFF;
+  padding: 5px;
+  border-radius: 40px;
+  margin-top: 20px;
+  height: 40px;
+  width: 120px;
+  margin-left: 10px;
+  margin-right: 10px;
+  letter-spacing: 1px;
+  line-height: 15px
+}
+
+#submit{
+  margin-top: 20px;
+  height: 40px;
+  width: 120px;
+  margin-left: 10px;
+  margin-right: 10px;
+  color: rgba(58, 133, 191, 0.75);
+  letter-spacing: 1px;
+  line-height: 15px;
+  border: 2px solid rgba(58, 133, 191, 0.75);
+  border-radius: 40px;
+  background: transparent;
+  transition: all 0.3s ease 0s;
+}
+
+#submit:hover {
+  color: #FFF;
+  background: rgba(58, 133, 191, 0.75);
+  border: 2px solid rgba(58, 133, 191, 0.75);
+}
+
+/** RESULT PAGE **/
+
+.result-page {
+  margin-top: 20%;
+  margin-left: 30%;
+  align-self: center;
+}
+
+.header {
+  font-family: 'Monda', sans-serif;
+  margin-bottom: 10px;
+  color: rgba(30, 84, 126, 0.75);
+}
+
+.header2 {
+  margin-left: 30%;
+  font-family: 'Monda', sans-serif;
+  margin-bottom: 10px;
+  color: rgba(30, 84, 126, 0.75);
+}
