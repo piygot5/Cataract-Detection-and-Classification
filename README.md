@@ -1,6 +1,8 @@
 # Cataract-Detection-and-Classification
 
-![image](https://user-images.githubusercontent.com/48744487/119627845-2e529500-be2a-11eb-9c19-9967cc5e7d4f.png)
+<p align="center">
+  <img width="460" height="300" src="https://user-images.githubusercontent.com/48744487/119628159-77a2e480-be2a-11eb-8557-eb8186d6fe04.png">
+</p>
 
 Our system works on the detection of cataracts and type of classification on the basis of severity namely; mild, normal, and severe, in an attempt to reduce errors of manual detection of cataracts in the early ages.
 
