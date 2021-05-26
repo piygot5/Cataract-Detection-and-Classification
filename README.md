@@ -29,3 +29,7 @@ PHASE 2
 2. VGG-16
 3. MOBILENET V2
 4. SQUEEZENET
+
+If you wish to learn before in-depth about GLCM texture feature extraction algorithm you refer the following
+
+https://www.notion.so/Understanding-GLCM-7d2501afd206430b906e4a9851e86280
